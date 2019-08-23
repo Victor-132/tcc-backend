@@ -1,8 +1,10 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('historic', table => {
-        table.integer('id').primary().references('id').inTable('motorcycle')
-        table.string('desc').notNull()
+        table.increments('id').primary()
+        table.integer('owner').notNull()
+        table.integer('moto').notNull()
+        table.string('service').notNull()
         table.dateTime('madeIn')
     })
 };

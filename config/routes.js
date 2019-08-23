@@ -2,12 +2,16 @@ module.exports = app => {
     app.post('/signup', app.api.user.save)
     app.post('/signin', app.api.auth.signin)
 
-    app.route('/motorcycle')
+    app.route('/motorcycles')
         .all(app.config.passport.authenticate())
-        .get(app.api.motorcycle.getMotorcycles)
-        .post(app.api.motorcycle.save)
+        .get(app.api.motorcycles.getMotorcycles)
+        .post(app.api.motorcycles.save)
 
-    app.route('/motorcycle/:id')
+    app.route('/historic')
         .all(app.config.passport.authenticate())
-        .delete(app.api.motorcycle.remove)
+        .get(app.api.historic.getHistoric)
+
+    app.route('/motorcycles/:id')
+        .all(app.config.passport.authenticate())
+        .delete(app.api.motorcycles.remove)
 }
