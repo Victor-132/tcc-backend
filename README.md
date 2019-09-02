@@ -21,17 +21,25 @@
 ***
 ## **Na parte de banco de dados temos os seguintes comandos úteis**
 Para acessar o postgresql via CMD
+
+
 * ___psql -U postgres___
  
  Para acessar a tabela
+
+
 * ___\c "Nome da tabela"___
 
 
 Para verificar os registros dos usuários
-* ___select * from users;___
+
+
+*  ___select * from users;___
   
 ***
 ## **Para descobrir seu IP**
 
-### Abra o CMD e utilize o comando ***ipconfig***
-### Na parte de ***Rede Ethernet*** ou ***Adaptador de Rede Sem Fio*** seu **IP** estará em ___IPV4: 192.168.**___
+ Abra o CMD e utilize o comando ***ipconfig***
+
+
+Na parte de ***Rede Ethernet*** ou ***Adaptador de Rede Sem Fio*** seu **IP** estará em ___IPV4: 192.168.**___
