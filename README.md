@@ -17,6 +17,7 @@
 * ***npm install --save-dev nodemon***
 * ***npm config get prefix***
 * ___set PATH=%PATH%;C:\Users\"Aqui seu usuario"\AppData\Roaming\npm;___
+  
 ***
 ## **Na parte de banco de dados temos os seguintes comandos úteis**
 Para acessar o postgresql via CMD
