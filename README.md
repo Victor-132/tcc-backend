@@ -21,14 +21,15 @@
 ***
 ## **Na parte de banco de dados temos os seguintes comandos úteis**
 Para acessar o postgresql via CMD
-* ***psql -U postgres***
+* ___psql -U postgres___
  
  Para acessar a tabela
-* ***\c "Nome da tabela"***
+* ___\c "Nome da tabela"___
 
 
 Para verificar os registros dos usuários
-* ***select * from users;***
+* ___select * from users;___
+  
 ***
 ## **Para descobrir seu IP**
 
