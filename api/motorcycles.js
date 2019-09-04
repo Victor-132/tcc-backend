@@ -10,9 +10,6 @@ module.exports = app => {
     }
 
     const save = (req, res) => {
-        if (!req.body.model.trim()) {
-            return res.status(400).send('Modelo é um campo obrigatório!')
-        }
 
         req.body.owner = req.user.id
 

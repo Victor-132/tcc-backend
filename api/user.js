@@ -18,5 +18,13 @@ module.exports = app => {
         })
     }
 
-    return { save }
+    const changeName = (req, res) => {
+        app.db('users')
+            .alter({ name: req.body.name })
+            .where({ id: req.user.id })
+            .then(_ => res.status(204).send())
+            .catch(err => res.status(400).json(err))
+    }
+
+    return { save, changeName }
 }
