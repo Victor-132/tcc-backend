@@ -20,11 +20,23 @@ module.exports = app => {
 
     const changeName = (req, res) => {
         app.db('users')
-            .alter({ name: req.body.name })
             .where({ id: req.user.id })
+            .update({ name: req.body.name })
             .then(_ => res.status(204).send())
             .catch(err => res.status(400).json(err))
     }
 
-    return { save, changeName }
+    const changePassword = (req, res) => {
+        obterHash(req.body.password, hash => {
+            const newPassword = hash
+
+            app.db('users')
+                .where({ id: req.user.id })
+                .update({ password: newPassword })
+                .then(_ => res.status(204).send())
+                .catch(err => res.status(400).json(err))
+        })
+    }
+
+    return { save, changeName, changePassword }
 }
