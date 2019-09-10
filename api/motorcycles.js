@@ -1,12 +1,17 @@
 const moment = require('moment')
 
 module.exports = app => {
-    const getMotorcycles = (req, res) => {
-        app.db('motorcycles')
-            .where({ owner: req.user.id })
-            .orderBy('id')
-            .then(motorcycles => res.json(motorcycles))
-            .catch(err => res.status(400).json(err))
+    const getStatus = async (req, res) => {
+
+        const status = await app.db('motorcycles')
+            .where({ owner: req.user.id, status: 't' })
+            .first()
+
+        if (status) {
+            return res.send(true)
+        } else {
+            return res.send(false)
+        }
     }
 
     const save = (req, res) => {
@@ -34,5 +39,5 @@ module.exports = app => {
             .catch(err => res.status(400).json(err))
     }
 
-    return { getMotorcycles, save, remove }
+    return { getStatus, save, remove }
 }

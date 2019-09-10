@@ -12,7 +12,7 @@ module.exports = app => {
 
     app.route('/motorcycles')
         .all(app.config.passport.authenticate())
-        .get(app.api.motorcycles.getMotorcycles)
+        .get(app.api.motorcycles.getStatus)
         .post(app.api.motorcycles.save)
 
     app.route('/historic')
