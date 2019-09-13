@@ -43,3 +43,14 @@ Para verificar os registros dos usuários
 
 
 Na parte de ***Rede Ethernet*** ou ***Adaptador de Rede Sem Fio*** seu **IP** estará em ___IPV4: 192.168.**___
+***
+## ***Caso o comando psql não funcione***
+
+Precisará adicionar a variável de ambiente
+
+1. Pressione a tecla Windows+E vá até ao lado esquerdo e clique com o botão direito em Este Computador.
+2. Clique em Configurações Avançadas do Sistema no lado esquerdo.
+3. Clique em Variáveis de Ambiente.
+4. Vá até Path e edite.
+5. Adicione ao path como de exemplo:***"C:\Program Files\PostgreSQL\9.0\bin"***
+6. Reinicie o Windows, caso não reconheça o comando ***(Se estiver com o cmd antigo antes do tutorial ele não irá funcionar é necessário abrir um novo cmd após tutorial)***.
