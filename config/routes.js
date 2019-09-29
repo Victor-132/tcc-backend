@@ -1,6 +1,7 @@
 module.exports = app => {
     app.post('/signup', app.api.user.save)
     app.post('/signin', app.api.auth.signin)
+    app.post('/forgotPassword/', app.api.user.forgotPassword)
 
     app.route('/changeName')
         .all(app.config.passport.authenticate())
