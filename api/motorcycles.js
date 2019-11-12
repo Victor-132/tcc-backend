@@ -3,8 +3,8 @@ const moment = require('moment')
 module.exports = app => {
     const getStatus = async (req, res) => {
 
-        const status = await app.db('motorcycles')
-            .where({ owner: req.user.id, status: 't' })
+        const status = await app.db('motorcycle')
+            .where({ id_owner: req.user.id, status: 't' })
             .first()
 
         if (status) {
@@ -18,15 +18,15 @@ module.exports = app => {
 
         req.body.owner = req.user.id
 
-        app.db('motorcycles')
-            .insert(req.body)
+        app.db('motorcycle')
+            .insert({model: req.body.model, id_owner: req.user.id})
             .then(_ => res.status(204).send())
             .catch(err => res.status(400).json(err))
     }
 
     const remove = (req, res) => {
-        app.db('motorcycles')
-            .where({ id: req.params.id, owner: req.user.id })
+        app.db('motorcycle')
+            .where({ id: req.params.id, id_owner: req.user.id })
             .del()
             .then(rowsDeleted => {
                 if (rowsDeleted > 0) {
